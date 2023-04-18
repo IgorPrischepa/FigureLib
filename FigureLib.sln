@@ -5,7 +5,14 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FigureLib", "FigureLib.csproj", "{73A42347-A0E7-4C33-868A-926604E72F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureLib.Tests", "FigureLib.Tests\FigureLib.Tests.csproj", "{EBB827BC-0775-497A-BD8E-6FAB5D04F070}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FigureLib.Tests", "FigureLib.Tests\FigureLib.Tests.csproj", "{EBB827BC-0775-497A-BD8E-6FAB5D04F070}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL_Task", "SQL_Task", "{8FD84E31-2605-451D-B909-01613233A231}"
+	ProjectSection(SolutionItems) = preProject
+		Db_create.sql = Db_create.sql
+		Db_init.sql = Db_init.sql
+		Requierd_Request.sql = Requierd_Request.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
