@@ -17,7 +17,7 @@ namespace FigureLib.Tests
         {
             Circle circle = new(3);
 
-            Assert.Equal(28.274, circle.CalcArea(), 3);
+            Assert.Equal(28.274, FigureHelper.CalcArea(circle), 3);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace FigureLib.Figures
         }
 
 
-        public override double CalcArea()
+        internal override double CalcArea()
         {
             double semiPerimeter = (_a + _b + _c) / 2.0;
             return Math.Sqrt(semiPerimeter * (semiPerimeter - _a) * (semiPerimeter - _b) * (semiPerimeter - _c));
@@ -45,7 +45,7 @@ namespace FigureLib.Figures
         /// <param name="b">Side "b"</param>
         /// <param name="c">Side "c"</param>
         /// <returns>True if can exist, otherwise false.</returns>
-        public static bool IsValidTriangle(double a, double b, double c)
+        internal static bool IsValidTriangle(double a, double b, double c)
         {
             if (a + b > c && b + c > a && c + a > b)
             {
@@ -64,7 +64,7 @@ namespace FigureLib.Figures
         /// <param name="b">Side "b"</param>
         /// <param name="c">Side "c"</param>
         /// <returns>True if triangle is right, otherwise false.</returns>
-        public static bool IsRightTriangle(double a, double b, double c)
+        internal static bool IsRightTriangle(double a, double b, double c)
         {
             if (IsValidTriangle(a, b, c))
             {

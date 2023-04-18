@@ -26,23 +26,23 @@ namespace FigureLib.Tests
         {
             Triangle triangle = new(3, 4, 4);
 
-            Assert.Equal(5.562, triangle.CalcArea(), 3);
+            Assert.Equal(5.562, FigureHelper.CalcArea(triangle), 3);
         }
 
         [Fact]
         public void TriangleValidTest()
         {
-            Assert.True(Triangle.IsValidTriangle(1, 1, 1), "Must be true, it's valid triangle");
+            Assert.True(FigureHelper.IsValidTriangle(1, 1, 1), "Must be true, it's valid triangle");
 
-            Assert.False(Triangle.IsValidTriangle(3, 4, 8), "Must be false, isn't valid triangle");
+            Assert.False(FigureHelper.IsValidTriangle(3, 4, 8), "Must be false, isn't valid triangle");
         }
 
         [Fact]
         public void RightTriangleTest()
         {
-            Assert.False(Triangle.IsRightTriangle(1, 1, 1), "Must be false, it's not right triangle");
+            Assert.False(FigureHelper.IsRightTriangle(1, 1, 1), "Must be false, it's not right triangle");
 
-            Assert.True(Triangle.IsRightTriangle(3, 4, 5), "Must be true, it's right triangle");
+            Assert.True(FigureHelper.IsRightTriangle(3, 4, 5), "Must be true, it's right triangle");
         }
     }
 }
