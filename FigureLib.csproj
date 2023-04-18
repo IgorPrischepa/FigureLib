@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="FigureLib.Tests\**" />
+    <EmbeddedResource Remove="FigureLib.Tests\**" />
+    <None Remove="FigureLib.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.assert" Version="2.4.2" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
+  </ItemGroup>
+
 </Project>
