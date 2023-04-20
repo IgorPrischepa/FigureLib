@@ -23,7 +23,6 @@ namespace FigureLib.Figures
             _radius = radius[0];
         }
 
-
         internal override double CalcArea()
         {
             return Math.PI * _radius * _radius;

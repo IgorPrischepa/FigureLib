@@ -7,7 +7,7 @@
 
 <ul>
 <li>Юнит-тесты</li>
-<li>*Легкость добавления других фигур</li>
+<li>Легкость добавления других фигур</li>
 <li>Вычисление площади фигуры без знания типа фигуры в compile-time</li>
 <li>Проверку на то, является ли треугольник прямоугольным</li>
 </ul>
@@ -15,7 +15,29 @@
 ## Решение
 Для того чтобы добавить новую фигуру необходимо наследоваться от [```Firgure```](https://github.com/IgorPrischepa/FigureLib/blob/master/Contracts/Figure.cs), после чего реализовать метод [```CalcArea()```](https://github.com/IgorPrischepa/FigureLib/blob/94a496e9ac82645021220a857bab81251c1b2656/Contracts/Figure.cs#L9).
 
-В папке [FigureLob.Test](https://github.com/IgorPrischepa/FigureLib/tree/master/FigureLib.Tests) располагаются юнит тесты для библиотеки. 
+Конструктор новой фигуры должен принимать ```params double[]```.
+
+В методе [```CalcArea()```](https://github.com/IgorPrischepa/FigureLib/blob/4060b33217620adcb6de8a24c92231d65dc9f176/FigureHelper.cs#L21) реализовано определение типа фигуры во время выполенния.
+
+В папке [FigureLob.Test](https://github.com/IgorPrischepa/FigureLib/tree/master/FigureLib.Tests) располагаются юнит тесты для типов фигур в библиотеке. 
+
+### Примеры
+
+```
+//Вызов расчёта площади треугольника
+
+FigureHelper.CalcArea<Triangle>(4,4,5)
+
+//Вызов расчёта площади круга
+
+FigureHelper.CalcArea<Circle>(5)
+
+//Проверка является ли треугольник прямоугольным
+
+FigureHelper.IsRightTriangle(3, 4, 5)
+```
+
+
 
 ## Задача №2
 
