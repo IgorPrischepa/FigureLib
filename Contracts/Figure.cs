@@ -6,6 +6,6 @@
         /// Calculate area of figure
         /// </summary>
         /// <returns></returns>
-        public abstract double CalcArea();
+        internal abstract double CalcArea();
     }
 }

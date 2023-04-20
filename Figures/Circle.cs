@@ -9,20 +9,22 @@ namespace FigureLib.Figures
         /// <summary>
         /// Create circle with scpecified radius
         /// </summary>
-        /// <param name="radius">Positive number represents radius of circle</param>
+        /// <param name="radius">Positive number represents radius of circle. Shuould be single number.</param>
         /// <exception cref="ArgumentOutOfRangeException">Throw if number less or eqaual zero</exception>
-        public Circle(double radius)
+        /// <exception cref="ArgumentOutOfRangeException">Throw if number less or eqaual zero</exception>
+        internal Circle(params double[] radius)
         {
-            if (radius <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(radius), "Circle radius must be a positive number");
-            }
+            if (radius.Length == 0 || radius.Length > 1)
+                throw new ArgumentException("Invalid number of parameters");
 
-            _radius = radius;
+            if (radius[0] <= 0)
+                throw new ArgumentOutOfRangeException(nameof(radius), "Circle radius must be a positive number");
+
+            _radius = radius[0];
         }
 
 
-        public override double CalcArea()
+        internal override double CalcArea()
         {
             return Math.PI * _radius * _radius;
         }

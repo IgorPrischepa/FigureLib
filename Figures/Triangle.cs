@@ -11,28 +11,31 @@ namespace FigureLib.Figures
         /// <summary>
         /// Create triangle with specified sides
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <param name="c"></param>
+        /// <param name="sides">Must contain three of positive numbers with represent sides of triangle</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        ///    /// <exception cref="ArgumentException"></exception>
-        public Triangle(double a, double b, double c)
+        /// <exception cref="ArgumentException"></exception>
+        internal Triangle(params double[] sides)
         {
-            if (a <= 0 || b <= 0 || c <= 0)
-                throw new ArgumentOutOfRangeException("Side can't be less or equal zero");
+            if (sides.Length < 3 || sides.Length > 3)
+                throw new ArgumentException("Invalid number of parameters");
 
-            if (!IsValidTriangle(a, b, c))
+
+            if (sides[0] <= 0 || sides[1] <= 0 || sides[2] <= 0)
+                throw new ArgumentOutOfRangeException(nameof(sides), "Side can't be less or equal zero");
+
+
+            if (!IsValidTriangle(sides[0], sides[1], sides[2]))
             {
                 throw new ArgumentException("Triangle with provided sides can't exist.");
             }
 
-            _a = a;
-            _b = b;
-            _c = c;
+            _a = sides[0];
+            _b = sides[1];
+            _c = sides[2];
         }
 
 
-        public override double CalcArea()
+        internal override double CalcArea()
         {
             double semiPerimeter = (_a + _b + _c) / 2.0;
             return Math.Sqrt(semiPerimeter * (semiPerimeter - _a) * (semiPerimeter - _b) * (semiPerimeter - _c));
@@ -45,7 +48,7 @@ namespace FigureLib.Figures
         /// <param name="b">Side "b"</param>
         /// <param name="c">Side "c"</param>
         /// <returns>True if can exist, otherwise false.</returns>
-        public static bool IsValidTriangle(double a, double b, double c)
+        internal static bool IsValidTriangle(double a, double b, double c)
         {
             if (a + b > c && b + c > a && c + a > b)
             {
@@ -64,7 +67,7 @@ namespace FigureLib.Figures
         /// <param name="b">Side "b"</param>
         /// <param name="c">Side "c"</param>
         /// <returns>True if triangle is right, otherwise false.</returns>
-        public static bool IsRightTriangle(double a, double b, double c)
+        internal static bool IsRightTriangle(double a, double b, double c)
         {
             if (IsValidTriangle(a, b, c))
             {
