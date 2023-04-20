@@ -23,7 +23,7 @@
 
 ### Примеры
 
-```
+```csharp
 //Вызов расчёта площади треугольника
 
 FigureHelper.CalcArea<Triangle>(4,4,5)
@@ -36,8 +36,6 @@ FigureHelper.CalcArea<Circle>(5)
 
 FigureHelper.IsRightTriangle(3, 4, 5)
 ```
-
-
 
 ## Задача №2
 
