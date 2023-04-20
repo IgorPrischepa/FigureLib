@@ -8,7 +8,7 @@ namespace FigureLib.Tests
         public void InputValidationTest()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => FigureHelper.CalcArea<Circle>(-1));
-            Assert.Throws<ArgumentOutOfRangeException>(() => FigureHelper.CalcArea <Circle>(0));
+            Assert.Throws<ArgumentOutOfRangeException>(() => FigureHelper.CalcArea<Circle>(0));
         }
 
         [Fact]

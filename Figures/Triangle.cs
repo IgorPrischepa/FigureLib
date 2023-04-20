@@ -25,9 +25,7 @@ namespace FigureLib.Figures
 
 
             if (!IsValidTriangle(sides[0], sides[1], sides[2]))
-            {
                 throw new ArgumentException("Triangle with provided sides can't exist.");
-            }
 
             _a = sides[0];
             _b = sides[1];

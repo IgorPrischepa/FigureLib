@@ -1,6 +1,5 @@
 ﻿using FigureLib.Contracts;
 using FigureLib.Figures;
-using System.Linq;
 using System.Reflection;
 
 
