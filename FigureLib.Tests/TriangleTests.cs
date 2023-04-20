@@ -23,7 +23,7 @@ namespace FigureLib.Tests
         [Fact]
         public void CalcAreaTest()
         {
-            Assert.Equal(7.806, FigureHelper.CalcArea<Triangle>(4,4,5),3);
+            Assert.Equal(7.806, FigureHelper.CalcArea<Triangle>(4, 4, 5), 3);
         }
 
         [Fact]
