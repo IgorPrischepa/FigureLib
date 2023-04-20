@@ -11,24 +11,27 @@ namespace FigureLib.Figures
         /// <summary>
         /// Create triangle with specified sides
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <param name="c"></param>
+        /// <param name="sides">Must contain three of positive numbers with represent sides of triangle</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        ///    /// <exception cref="ArgumentException"></exception>
-        public Triangle(double a, double b, double c)
+        /// <exception cref="ArgumentException"></exception>
+        internal Triangle(params double[] sides)
         {
-            if (a <= 0 || b <= 0 || c <= 0)
-                throw new ArgumentOutOfRangeException("Side can't be less or equal zero");
+            if (sides.Length < 3 || sides.Length > 3)
+                throw new ArgumentException("Invalid number of parameters");
 
-            if (!IsValidTriangle(a, b, c))
+
+            if (sides[0] <= 0 || sides[1] <= 0 || sides[2] <= 0)
+                throw new ArgumentOutOfRangeException(nameof(sides), "Side can't be less or equal zero");
+
+
+            if (!IsValidTriangle(sides[0], sides[1], sides[2]))
             {
                 throw new ArgumentException("Triangle with provided sides can't exist.");
             }
 
-            _a = a;
-            _b = b;
-            _c = c;
+            _a = sides[0];
+            _b = sides[1];
+            _c = sides[2];
         }
 
 

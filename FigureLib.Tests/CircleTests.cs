@@ -1,5 +1,4 @@
 using FigureLib.Figures;
-using Xunit;
 
 namespace FigureLib.Tests
 {
@@ -8,16 +7,14 @@ namespace FigureLib.Tests
         [Fact]
         public void InputValidationTest()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => new Circle(-1));
-            Assert.Throws<ArgumentOutOfRangeException>(() => new Circle(0));
+            Assert.Throws<ArgumentOutOfRangeException>(() => FigureHelper.CalcArea<Circle>(-1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => FigureHelper.CalcArea <Circle>(0));
         }
 
         [Fact]
         public void AreaCalcTest()
         {
-            Circle circle = new(3);
-
-            Assert.Equal(28.274, FigureHelper.CalcArea(circle), 3);
+            Assert.Equal(28.274, FigureHelper.CalcArea<Circle>(3), 3);
         }
     }
 }
